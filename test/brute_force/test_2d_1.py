@@ -2,7 +2,7 @@ import pytest
 import sys
 import pathlib
 
-from .classifier_factory import create
+from src import create
 
 base_points = {
     'A': (0, 0),
