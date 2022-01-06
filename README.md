@@ -1,2 +1,0 @@
-# VoronoiClassification
-ボロノイ図のルールに従って分類を行う
