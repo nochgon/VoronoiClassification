@@ -5,7 +5,7 @@ from typing import Dict, Tuple
 class AbstractClassifier(metaclass=ABCMeta):
     def __init__(self, base_points: Dict[str, Tuple[float, ...]]) -> None:
         """
-        バリデーションチェックをここでかける。
+        バリデーションチェックをここでかける。\n
         ・base_pointsに登録された座標の次元が一致していること。
         　・座標の次元はメンバーに持つ。
         """

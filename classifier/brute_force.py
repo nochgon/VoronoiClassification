@@ -24,19 +24,18 @@ class BruteForceClassifier(abs_clf.AbstractClassifier):
         name_rsl = None
         distance_rsl = None
         for name, coordinates in self.__base_points.items():
-            if name_rsl:
-                distance = None
-                for position_target, position_ref in zip(coordinates_target,
-                                                         coordinates):
-                    if distance:
-                        distance += (position_target - position_ref) ** 2
-                    else:
-                        distance = (position_target - position_ref) ** 2
-                if distance is None:
-                    raise NotImplementedError
-                if distance_rsl is None or distance < distance_rsl:
-                    distance_rsl = distance
-                    name_rsl = name
+            distance = None
+            for position_target, position_ref in zip(coordinates_target,
+                                                     coordinates):
+                if distance:
+                    distance += (position_target - position_ref) ** 2
+                else:
+                    distance = (position_target - position_ref) ** 2
+            if distance is None:
+                raise NotImplementedError
+            if distance_rsl is None or distance < distance_rsl:
+                distance_rsl = distance
+                name_rsl = name
 
         if name_rsl is None:
             raise NotImplementedError
